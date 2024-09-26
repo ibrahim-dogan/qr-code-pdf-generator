@@ -29,7 +29,6 @@ const QRCodeGenerator = () => {
 
   const generatePDF = (forPreview = false) => {
     const pdf = new jsPDF();
-    const pageWidth = pdf.internal.pageSize.getWidth();
     const pageHeight = pdf.internal.pageSize.getHeight();
 
     let y = marginTop;
@@ -162,22 +161,6 @@ const QRCodeGenerator = () => {
               />
             </div>
         )}
-
-        {/*<div className="grid gap-4" style={{*/}
-        {/*  gridTemplateColumns: `repeat(${columns}, 1fr)`,*/}
-        {/*}}>*/}
-        {/*  {ids.map((id, index) => (*/}
-        {/*      <div key={index} className="bg-gray-100 p-4 rounded flex flex-col items-center">*/}
-        {/*        <img*/}
-        {/*            src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(id)}`}*/}
-        {/*            alt={`QR Code for ${id}`}*/}
-        {/*            className="mb-2"*/}
-        {/*            style={{ width: `${qrSize * 2}px`, height: `${qrSize * 2}px` }}*/}
-        {/*        />*/}
-        {/*        <p className="text-center text-sm">{id}</p>*/}
-        {/*      </div>*/}
-        {/*  ))}*/}
-        {/*</div>*/}
       </div>
   );
 };
